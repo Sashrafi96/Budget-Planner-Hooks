@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Budget-Planner-Hooks/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/Budget-Planner-Hooks/static/js/main.ac5988f5.chunk.js",
+    "main.js.map": "/Budget-Planner-Hooks/static/js/main.ac5988f5.chunk.js.map",
+    "runtime-main.js": "/Budget-Planner-Hooks/static/js/runtime-main.d283de65.js",
+    "runtime-main.js.map": "/Budget-Planner-Hooks/static/js/runtime-main.d283de65.js.map",
+    "static/js/2.de359fff.chunk.js": "/Budget-Planner-Hooks/static/js/2.de359fff.chunk.js",
+    "static/js/2.de359fff.chunk.js.map": "/Budget-Planner-Hooks/static/js/2.de359fff.chunk.js.map",
+    "static/js/3.7e17f29b.chunk.js": "/Budget-Planner-Hooks/static/js/3.7e17f29b.chunk.js",
+    "static/js/3.7e17f29b.chunk.js.map": "/Budget-Planner-Hooks/static/js/3.7e17f29b.chunk.js.map",
+    "index.html": "/Budget-Planner-Hooks/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/Budget-Planner-Hooks/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.de359fff.chunk.js.LICENSE.txt": "/Budget-Planner-Hooks/static/js/2.de359fff.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d283de65.js",
+    "static/js/2.de359fff.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.ac5988f5.chunk.js"
+  ]
+}
