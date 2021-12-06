@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+label {
+  color: red;
+  text-align: left;
+}
+
+.label {
+  width: 200px;
+}

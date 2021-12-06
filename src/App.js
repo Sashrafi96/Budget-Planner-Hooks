@@ -1,25 +1,74 @@
-import logo from './logo.svg';
-import './App.css';
+//import "./App.css";
+import React, { useState } from "react";
+import AddExpenseForm from "./components/AddExpenseForm";
+import Budget from "./components/Budget";
+import ExpenseList from "./components/ExpenseList";
+import Remaining from "./components/Remaining";
+import SpentSoFar from "./components/SpentSoFar";
+import { v4 as uuidv4 } from "uuid";
 
-function App() {
+const initialExpenses = [
+  { id: uuidv4(), name: "Rent", amount: "1600" },
+  { id: uuidv4(), name: "Car Payment", amount: "300" },
+  { id: uuidv4(), name: "Electric Bill", amount: "100" },
+];
+
+const App = () => {
+  const [budget, setBudget] = useState("5000");
+  const [expenses, setExpenses] = useState(initialExpenses);
+  console.log(expenses);
+
+  const saveItem = (name, cost) => {
+    let newItem = {
+      id: uuidv4(),
+      name: name,
+      amount: cost,
+    };
+    let newList = [...expenses, newItem];
+    setExpenses(newList);
+  };
+
+  const editBudget = (dt) => {
+    console.log("Appdt=", dt);
+    setBudget(dt);
+    console.log("App=", budget);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="d-flex flex-column align-items-center">
+      <h1>My Budget Planner (Hooks)</h1>
+      <div className="card" style={{ width: "60rem" }}>
+        <div className="d-flex justify-content-between">
+          <div
+            className="border bg-info text-white "
+            style={{ width: "18rem", height: "3rem" }}
+          >
+            <Budget budget={budget} editBudget={editBudget} />
+          </div>
+          <div
+            className="border bg-secondary text-white"
+            style={{ width: "18rem" }}
+          >
+            <Remaining budget={budget} expense={expenses} />
+          </div>
+          <div
+            className="border bg-success text-white"
+            style={{ width: "18rem" }}
+          >
+            <SpentSoFar expense={expenses} />
+          </div>
+        </div>
+        <h3>Expenses</h3>
+        <div>
+          <ExpenseList expense={expenses} />
+        </div>
+        <h3>Add Expenses</h3>
+        <div>
+          <AddExpenseForm saveItem={saveItem} />
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

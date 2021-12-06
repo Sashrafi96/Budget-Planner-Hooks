@@ -1,0 +1,9 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit {
+  background-color: rgb(51, 171, 187);
+}
