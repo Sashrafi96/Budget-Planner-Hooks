@@ -16,7 +16,6 @@ const initialExpenses = [
 const App = () => {
   const [budget, setBudget] = useState("5000");
   const [expenses, setExpenses] = useState(initialExpenses);
-  console.log(expenses);
 
   const saveItem = (name, cost) => {
     let newItem = {
@@ -29,9 +28,12 @@ const App = () => {
   };
 
   const editBudget = (dt) => {
-    console.log("Appdt=", dt);
     setBudget(dt);
-    console.log("App=", budget);
+  };
+
+  const deleteExpense = (id) => {
+    let newExpenseList = expenses.filter((exp) => exp.id !== id);
+    setExpenses(newExpenseList);
   };
 
   return (
@@ -60,7 +62,7 @@ const App = () => {
         </div>
         <h3>Expenses</h3>
         <div>
-          <ExpenseList expense={expenses} />
+          <ExpenseList expense={expenses} deleteExpense={deleteExpense} />
         </div>
         <h3>Add Expenses</h3>
         <div>

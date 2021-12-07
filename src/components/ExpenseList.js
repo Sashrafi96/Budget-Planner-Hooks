@@ -1,12 +1,11 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
 
-const ExpenseList = ({ expense }) => {
-  console.log("ExpenseList;", expense);
+const ExpenseList = ({ expense, deleteExpense }) => {
   return (
     <ul className="list-group">
       {expense.map((exp) => (
-        <ExpenseItem key={exp.id} expense={exp} />
+        <ExpenseItem key={exp.id} expense={exp} deleteExpense={deleteExpense} />
       ))}
     </ul>
   );
